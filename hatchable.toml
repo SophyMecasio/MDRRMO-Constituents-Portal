@@ -1,0 +1,5 @@
+# Hatchable project manifest. This file marks the folder as a
+# Hatchable project and declares the services it uses.
+# Reference: https://hatchable.com/docs/developers/config
+name = "MDRRMO Constituents Portal"
+description = "A public information and community service website for Municipal Disaster Risk Reduction and Management Office constituents."

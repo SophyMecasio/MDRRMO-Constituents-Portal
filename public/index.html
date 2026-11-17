@@ -16,7 +16,7 @@
         <span><span class="brand-name">MDRRMO</span><span class="brand-sub">Community Information Portal</span></span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#services">Services</a><a href="#advisories">Advisories</a><a href="#preparedness">Preparedness</a><a href="#contact">Contact</a>
+        <a href="#services">Services</a><a href="#advisories">Advisories</a><a href="#preparedness">Preparedness</a><a href="#evacuation">Evacuation Centers</a><a href="#report">Report an Incident</a><a href="#contact">Contact</a>
       </nav>
       <a class="nav-cta" href="#preparedness">Be Prepared</a>
     </div>
@@ -53,7 +53,14 @@
     <section class="section" id="advisories" style="background:#edf4f2">
       <div class="container">
         <div class="section-head"><div class="kicker">Stay informed</div><h2>Latest advisories and announcements</h2><p>Only verified announcements issued by the MDRRMO should appear in this section.</p></div>
-        <div class="empty-panel"><strong>No official advisories have been published on this website yet.</strong> Please follow verified announcements from your local government and authorized agencies while this portal is being set up.</div>
+        <div id="advisoryList" class="quick-grid"><div class="empty-panel"><strong>Loading official advisories…</strong></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="evacuation" style="background:#edf4f2">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Find local support</div><h2>Evacuation centers</h2><p>Only centers verified by the MDRRMO should be listed here. Always follow current instructions from local responders.</p></div>
+        <div id="centerList" class="quick-grid"><div class="empty-panel">Loading verified evacuation center information…</div></div>
       </div>
     </section>
 
@@ -82,8 +89,26 @@
         </div>
       </div>
     </section>
+  <section class="section" id="report" style="background:#edf4f2">
+      <div class="container two-col">
+        <div><div class="kicker">Community reporting</div><h2>Submit a non-emergency incident report</h2><p class="muted">Use this form to send a community concern or incident report to the MDRRMO office for review. Submission does not mean that responders have been dispatched or that assistance is guaranteed.</p><p class="muted"><strong>Immediate danger?</strong> Do not wait for this form. Call your verified local emergency hotline or contact your barangay / emergency responders directly.</p></div>
+        <form id="reportForm" class="admin-card">
+          <div class="field"><label for="reporter_name">Your name *</label><input id="reporter_name" name="reporter_name" maxlength="120" required autocomplete="name"></div>
+          <div class="field"><label for="contact_number">Contact number *</label><input id="contact_number" name="contact_number" maxlength="40" required autocomplete="tel"></div>
+          <div class="field"><label for="barangay">Barangay *</label><input id="barangay" name="barangay" maxlength="120" required></div>
+          <div class="field"><label for="incident_type">Incident type *</label><select id="incident_type" name="incident_type" required><option value="">Select incident type</option><option>Flooding</option><option>Fallen tree / obstruction</option><option>Fire concern</option><option>Damaged infrastructure</option><option>Hazard / unsafe condition</option><option>Other community concern</option></select></div>
+          <div class="field"><label for="incident_location">Incident location *</label><input id="incident_location" name="incident_location" maxlength="240" required placeholder="Street, sitio, landmark, or area"></div>
+          <div class="field"><label for="description">Description *</label><textarea id="description" name="description" maxlength="3000" rows="4" required></textarea></div>
+          <div style="position:absolute;left:-9999px" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+          <div class="field"><label style="font-weight:500"><input type="checkbox" name="consent" required> I agree that the information I submit may be used by authorized MDRRMO personnel to review this report.</label></div>
+          <button class="btn" type="submit">Submit report</button><p id="reportMessage" class="status-msg" role="status"></p>
+          <p class="small-note">Please do not submit passwords, financial information, medical records, or other unnecessary sensitive details. Review the office privacy notice before public launch.</p>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="footer"><div class="container footer-inner"><span>© <span id="year">2026</span> Municipal Disaster Risk Reduction and Management Office</span><span>Community safety • Preparedness • Resilience</span></div></footer>
+<script src="/community.js" defer></script>
 </body>
 </html>
